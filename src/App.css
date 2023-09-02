@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
+/* HOME PAGE */
+.home-container{
+  background: #bbd2c5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #536976,
+    #bbd2c5
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #536976,
+    #bbd2c5
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ 
+  height: 100vh;
+  padding-top: 10vh;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*  CARD   */
+.card-wrap {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  
+}
+.card-descr {
+  padding: 0px;
+  margin: 0px;
+  font-size: 20px;
+}
+.card-date {
+  padding-top: 5px;
+  font-size: 14px;
+}
+.umbrella-i {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+ 
+}
+.card-body {
+  min-height: 300px;
+  height: 45vh;
+  position: relative;
+}
+.card-inside {
+  position: absolute;
+  bottom: 20px;
+  color: #48484a;
 }
 
-.App-link {
-  color: #61dafb;
+/* FORM */
+.form-wrap{
+  position: relative;
+ 
+}
+.form-1 {
+  display: flex;
+  justify-content: space-around;
+ padding-bottom: 10vh;
+
+
+}
+.enter-city-p {
+  text-align: center;
+  margin-top: 4vh;
+}
+.form-2{
+  position: absolute;
+  top: -50px;
+  right: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
