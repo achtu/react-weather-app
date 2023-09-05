@@ -41,7 +41,7 @@ function WeatherCard() {
         icon: data.weather[0]?.icon,
       });
     } catch (err) {
-      alert("Somethong goes wrong");
+      alert("failed to get your geo position");
     }
   };
   const getCurrentLocation = (event) => {
