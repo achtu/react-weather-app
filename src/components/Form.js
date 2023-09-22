@@ -11,19 +11,7 @@ export default function SearchForm({
 }) {
   return (
     <>
-      <style type="text/css">
-        {`
-    
-    .btn-outline-dark{
-      background-color: #fff;
-      border-color:#fff;
-    }
-    .btn-outline-dark:hover{
-      background-color: #48484A;
-      border-color:#48484A;
-    }
-    `}
-      </style>
+      
       <div className="form-wrap">
         <Form
          className="form-1"
