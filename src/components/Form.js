@@ -28,7 +28,7 @@ export default function SearchForm({
               />
             </Col>
             <Col xs="auto">
-              <Button variant="outline-dark" type="submit">
+              <Button variant="primary" type="submit">
                 Search
               </Button>
             </Col>
@@ -38,7 +38,7 @@ export default function SearchForm({
         <Form className="form-2" 
         onSubmit={getCurrentLocation}
         >
-          <Button variant="outline-dark" type="submit" 
+          <Button variant="primary" type="submit" 
           >
             Current Location
           </Button>

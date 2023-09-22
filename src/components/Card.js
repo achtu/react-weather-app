@@ -84,7 +84,7 @@ function WeatherCard() {
         getCurrentLocation={getCurrentLocation}
       />
       <div className="card-wrap">
-        <Card style={{ width: "18rem" }}>
+        <Card style={{ width: "20rem" }}>
           <Card.Body className="card-body">
             {weather.city ? (
               <div>
