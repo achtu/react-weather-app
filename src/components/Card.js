@@ -112,7 +112,7 @@ function WeatherCard() {
         </Card>
 
       </div>
-      <p style={{ textAlign:"center"}}>Open source code from <a style={{textDecoration:"none"}} href="https://github.com/achtu/react-weather-app" target="_blank" rel="noopener noreferrer" >achtu</a></p>
+      <p style={{ textAlign:"center"}}>Open source code by <a style={{textDecoration:"none"}} href="https://github.com/achtu/react-weather-app" target="_blank" rel="noopener noreferrer" >achtu</a></p>
     </>
   );
 }
