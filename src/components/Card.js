@@ -84,7 +84,7 @@ function WeatherCard() {
         getCurrentLocation={getCurrentLocation}
       />
       <div className="card-wrap">
-        <Card style={{ width: "20rem" }}>
+        <Card style={{ width: "25rem" }}>
           <Card.Body className="card-body">
             {weather.city ? (
               <div>
@@ -112,7 +112,7 @@ function WeatherCard() {
         </Card>
 
       </div>
-      <p style={{ textAlign:"center"}}>Open source code by <a style={{textDecoration:"none"}} href="https://github.com/achtu/react-weather-app" target="_blank" rel="noopener noreferrer" >achtu</a></p>
+      <p style={{ textAlign:"center"}}>This project was coded by <a style={{textDecoration:"none"}} href="https://github.com/achtu/react-weather-app" target="_blank" rel="noopener noreferrer" >achtu</a> and hosted on <a  style={{textDecoration:"none"}} href="https://app.netlify.com/teams/achtu/overview" target="_blank" rel="noopener noreferrer">Netify</a></p>
     </>
   );
 }
