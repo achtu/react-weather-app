@@ -11,10 +11,10 @@ export default function SearchForm({
 }) {
   return (
     <>
-      
+
       <div className="form-wrap">
         <Form
-         className="form-1"
+          
           onSubmit={handleSubmit}
           value={city}
           onChange={(event) => setCity(event.target.value)}>
@@ -35,10 +35,11 @@ export default function SearchForm({
           </Row>
         </Form>
 
-        <Form className="form-2" 
-        onSubmit={getCurrentLocation}
+        <Form
+          onSubmit={getCurrentLocation}
         >
-          <Button variant="primary" type="submit" 
+          <Button variant="primary" type="submit"
+
           >
             Current Location
           </Button>

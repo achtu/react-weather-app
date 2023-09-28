@@ -93,18 +93,17 @@ function WeatherCard() {
         getCurrentLocation={getCurrentLocation}
       />
       <div className="card-wrap">
-        <Card style={{ width: "25rem" }}>
+        <Card style={{ width: "30rem", paddingTop: "20px", marginBottom: "10px" }}>
           <Card.Body className="card-body">
             {weather.city ? (
               <div>
                 <Row>
-                  <Col>
-                  <Card.Title style={{ fontSize: "2rem" }}>
+                  <Col style={{width: "15rem"}}>
+                    <Card.Title style={{ fontSize: "2rem" }}>
                       {weather.temperature}° {weather.city}
                     </Card.Title>
                   </Col>
-                  <Col>
-                   
+                  <Col  style={{width: "10rem"}}>
                     <Image
                       src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
                       alt="img"
@@ -113,17 +112,15 @@ function WeatherCard() {
                   </Col>
                 </Row>
 
-
-
                 <Card.Text>
                   <Row>
-                    <Col>
+                    <Col  style={{width: "15rem"}}>
                       <p><span className="card-descr"> {weather.description} </span>
                         <br />
                         {weather.date} </p>
 
                     </Col>
-                    <Col>
+                    <Col   style={{width: "10rem"}}>
                       <p className="card-humidity-wind">Humidity: {weather.humidity} %
                         <br />
                         Wind: {weather.wind} km/h</p>
@@ -145,7 +142,7 @@ function WeatherCard() {
         </Card>
 
       </div>
-      <p style={{ textAlign: "center" }}>This project was coded by <a style={{ textDecoration: "none" }} href="https://github.com/achtu/react-weather-app" target="_blank" rel="noopener noreferrer" >achtu</a> and hosted on <a style={{ textDecoration: "none" }} href="https://app.netlify.com/teams/achtu/overview" target="_blank" rel="noopener noreferrer">Netify</a></p>
+      <p style={{ textAlign: "center", fontStyle: "italic" }}>This project was coded by <a style={{ textDecoration: "none" }} href="https://github.com/achtu/react-weather-app" target="_blank" rel="noopener noreferrer" >achtu</a> and hosted on <a style={{ textDecoration: "none" }} href="https://app.netlify.com/teams/achtu/overview" target="_blank" rel="noopener noreferrer">Netify</a></p>
     </>
   );
 }

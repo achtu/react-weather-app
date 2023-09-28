@@ -1,17 +1,19 @@
 /* HOME PAGE */
-.home-container{
+.home-container {
   color: #48484a;
   height: 100vh;
   padding-top: 10vh;
 }
+
 /*  CARD   */
 .card-wrap {
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
-  
+
 }
+
 .card-descr {
   padding: 0px;
   margin: 0px;
@@ -19,39 +21,34 @@
 }
 
 .umbrella-i {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-
- 
+  padding-bottom: 20px;
+  padding-left: 70px;
 }
+
 .card-body {
   min-height: 300px;
-  height: 45vh;
-  position: relative;
-  padding: 5px;
+  height: 50vh;
+  align-items: center;
+  margin: 5px auto;
 }
 
+.hourly-wrp {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
 
 /* FORM */
-.form-wrap{
+.form-wrap {
   position: relative;
- 
-}
-.form-1 {
   display: flex;
   justify-content: space-around;
- padding-bottom: 10vh;
-
-
+  width: 500px;
+  margin: 0px auto;
+  padding-bottom: 5vh;
 }
+
 .enter-city-p {
   text-align: center;
   margin-top: 4vh;
 }
-.form-2{
-  position: absolute;
-  top: -50px;
-  right: 20px;
-}
-
