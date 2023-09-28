@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import SearchForm from "./Form";
 import Card from "react-bootstrap/Card";
 
-import { Image } from "react-bootstrap";
+import { Image, Row, Col } from "react-bootstrap";
+import HourlyForecast from "./HourlyForecast";
 
 function WeatherCard() {
   const [city, setCity] = useState("");
@@ -10,6 +11,8 @@ function WeatherCard() {
     temperature: undefined,
     description: undefined,
     city: undefined,
+    humidity: undefined,
+    wind: undefined,
     date: undefined,
     icon: undefined,
   });
@@ -29,16 +32,20 @@ function WeatherCard() {
         savePositionToState
       );
       const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`
+
       );
       const data = await res.json();
 
       setWeather({
-        temperature: Math.round(data.main?.temp),
-        description: data.weather[0]?.description,
-        city: data.name,
-        date: Date(data.dt).slice(0, -47),
-        icon: data.weather[0]?.icon,
+        temperature: Math.round(data.list[0].main?.temp),
+        humidity: data.list[0].main?.humidity,
+        city: data.city.name,
+        wind: data.list[0].wind.speed,
+        date: Date(data.list.dt).slice(0, -47),
+        description: data.list[0].weather[0]?.description,
+        icon: data.list[0].weather[0]?.icon
+
       });
     } catch (err) {
       alert("failed to get your geo position");
@@ -53,16 +60,18 @@ function WeatherCard() {
   const fetchWeatherData = async () => {
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`
       );
       const data = await response.json();
 
       setWeather({
-        temperature: Math.round(data.main?.temp),
-        description: data.weather[0]?.description,
-        city: data.name,
-        date: Date(data.dt).slice(0, -47),
-        icon: data.weather[0]?.icon,
+        temperature: Math.round(data.list[0].main?.temp),
+        humidity: data.list[0].main?.humidity,
+        city: data.city.name,
+        wind: data.list[0].wind.speed,
+        date: Date(data.list.dt).slice(0, -47),
+        description: data.list[0].weather[0]?.description,
+        icon: data.list[0].weather[0]?.icon
       });
     } catch (err) {
       alert("please check if the data entered is correct and try again");
@@ -88,20 +97,44 @@ function WeatherCard() {
           <Card.Body className="card-body">
             {weather.city ? (
               <div>
-                <Image
-                  src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
-                  alt="img"
-                  className="umbrella-i"
-                />
-                <div className="card-inside">
+                <Row>
+                  <Col>
                   <Card.Title style={{ fontSize: "2rem" }}>
-                    {weather.temperature}° {weather.city}
-                  </Card.Title>
-                  <Card.Text>
-                    <p className="card-descr"> {weather.description}</p>
-                    <p className="card-date"> {weather.date} </p>
-                  </Card.Text>
-                </div>
+                      {weather.temperature}° {weather.city}
+                    </Card.Title>
+                  </Col>
+                  <Col>
+                   
+                    <Image
+                      src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
+                      alt="img"
+                      className="umbrella-i"
+                    />
+                  </Col>
+                </Row>
+
+
+
+                <Card.Text>
+                  <Row>
+                    <Col>
+                      <p><span className="card-descr"> {weather.description} </span>
+                        <br />
+                        {weather.date} </p>
+
+                    </Col>
+                    <Col>
+                      <p className="card-humidity-wind">Humidity: {weather.humidity} %
+                        <br />
+                        Wind: {weather.wind} km/h</p>
+
+                    </Col>
+                  </Row>
+
+
+                </Card.Text>
+
+                <HourlyForecast icon={weather.icon} />
               </div>
             ) : (
               <div className="enter-city-p">
@@ -112,7 +145,7 @@ function WeatherCard() {
         </Card>
 
       </div>
-      <p style={{ textAlign:"center"}}>This project was coded by <a style={{textDecoration:"none"}} href="https://github.com/achtu/react-weather-app" target="_blank" rel="noopener noreferrer" >achtu</a> and hosted on <a  style={{textDecoration:"none"}} href="https://app.netlify.com/teams/achtu/overview" target="_blank" rel="noopener noreferrer">Netify</a></p>
+      <p style={{ textAlign: "center" }}>This project was coded by <a style={{ textDecoration: "none" }} href="https://github.com/achtu/react-weather-app" target="_blank" rel="noopener noreferrer" >achtu</a> and hosted on <a style={{ textDecoration: "none" }} href="https://app.netlify.com/teams/achtu/overview" target="_blank" rel="noopener noreferrer">Netify</a></p>
     </>
   );
 }
