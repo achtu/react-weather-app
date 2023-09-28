@@ -44,8 +44,9 @@ function WeatherCard() {
         wind: data.list[0].wind.speed,
         date: Date(data.list.dt).slice(0, -47),
         description: data.list[0].weather[0]?.description,
-        icon: data.list[0].weather[0]?.icon
-
+        icon: data.list[0].weather[0]?.icon,
+        min: Math.round(data.list[0].main?.temp_min),
+        max:Math.round(data.list[0].main?.temp_max)
       });
     } catch (err) {
       alert("failed to get your geo position");
@@ -71,7 +72,9 @@ function WeatherCard() {
         wind: data.list[0].wind.speed,
         date: Date(data.list.dt).slice(0, -47),
         description: data.list[0].weather[0]?.description,
-        icon: data.list[0].weather[0]?.icon
+        icon: data.list[0].weather[0]?.icon,
+        min: Math.round(data.list[0].main?.temp_min),
+        max:Math.round(data.list[0].main?.temp_max)
       });
     } catch (err) {
       alert("please check if the data entered is correct and try again");
@@ -131,7 +134,7 @@ function WeatherCard() {
 
                 </Card.Text>
 
-                <HourlyForecast icon={weather.icon} />
+                <HourlyForecast icon={weather.icon} min={weather.min} max={weather.max} date={weather.date}/>
               </div>
             ) : (
               <div className="enter-city-p">

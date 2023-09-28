@@ -33,11 +33,12 @@
 }
 
 .hourly-wrp {
-  position: relative;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
-
+.min{
+  font-weight: 600;
+  color: #48484a;
+}
 /* FORM */
 .form-wrap {
   position: relative;
