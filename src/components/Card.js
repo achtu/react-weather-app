@@ -3,7 +3,11 @@ import SearchForm from "./Form";
 import Card from "react-bootstrap/Card";
 
 import { Image, Row, Col } from "react-bootstrap";
-import HourlyForecast from "./HourlyForecast";
+
+import DayFour from "./DayFour";
+import DayTwo from "./DayTwo";
+import DayThree from "./DayThree";
+import DayFive from "./DayFive";
 
 function WeatherCard() {
   const [city, setCity] = useState("");
@@ -46,7 +50,31 @@ function WeatherCard() {
         description: data.list[0].weather[0]?.description,
         icon: data.list[0].weather[0]?.icon,
         min: Math.round(data.list[0].main?.temp_min),
-        max:Math.round(data.list[0].main?.temp_max)
+        max:Math.round(data.list[0].main?.temp_max),
+
+
+        dtDayTwo: data.list[1].dt_txt,
+        iconDayTwo: data.list[1].weather[0]?.icon,
+        minDayTwo: Math.round(data.list[1].main?.temp_min),
+        maxDayTwo:Math.round(data.list[1].main?.temp_max),
+
+
+        dtDayThree: data.list[2].dt_txt,
+        iconDayThree: data.list[2].weather[0]?.icon,
+        minDayThree: Math.round(data.list[2].main?.temp_min),
+        maxDayThree:Math.round(data.list[2].main?.temp_max),
+
+
+        dtDayFour: data.list[3].dt_txt,
+        iconDayFour: data.list[3].weather[0]?.icon,
+        minDayFour: Math.round(data.list[3].main?.temp_min),
+        maxDayFour:Math.round(data.list[3].main?.temp_max),
+
+        dtDayFive: data.list[4].dt_txt,
+        iconDayFive: data.list[4].weather[0]?.icon,
+        minDayFive: Math.round(data.list[4].main?.temp_min),
+        maxDayFive:Math.round(data.list[4].main?.temp_max),
+       
       });
     } catch (err) {
       alert("failed to get your geo position");
@@ -74,7 +102,31 @@ function WeatherCard() {
         description: data.list[0].weather[0]?.description,
         icon: data.list[0].weather[0]?.icon,
         min: Math.round(data.list[0].main?.temp_min),
-        max:Math.round(data.list[0].main?.temp_max)
+        max:Math.round(data.list[0].main?.temp_max),
+
+
+        dtDayTwo: data.list[1].dt_txt,
+        iconDayTwo: data.list[1].weather[0]?.icon,
+        minDayTwo: Math.round(data.list[1].main?.temp_min),
+        maxDayTwo:Math.round(data.list[1].main?.temp_max),
+
+
+        dtDayThree: data.list[2].dt_txt,
+        iconDayThree: data.list[2].weather[0]?.icon,
+        minDayThree: Math.round(data.list[2].main?.temp_min),
+        maxDayThree:Math.round(data.list[2].main?.temp_max),
+
+
+        dtDayFour: data.list[3].dt_txt,
+        iconDayFour: data.list[3].weather[0]?.icon,
+        minDayFour: Math.round(data.list[3].main?.temp_min),
+        maxDayFour:Math.round(data.list[3].main?.temp_max),
+
+        dtDayFive: data.list[4].dt_txt,
+        iconDayFive: data.list[4].weather[0]?.icon,
+        minDayFive: Math.round(data.list[4].main?.temp_min),
+        maxDayFive:Math.round(data.list[4].main?.temp_max),
+       
       });
     } catch (err) {
       alert("please check if the data entered is correct and try again");
@@ -133,8 +185,14 @@ function WeatherCard() {
 
 
                 </Card.Text>
+                <div className="div-days">
 
-                <HourlyForecast icon={weather.icon} min={weather.min} max={weather.max} date={weather.date}/>
+                
+                <DayTwo dtDayTwo={weather.dtDayTwo} iconDayTwo={weather.iconDayTwo} minDayTwo={weather.minDayTwo} maxDayTwo={weather.maxDayTwo}/>
+                <DayThree dtDayThree={weather.dtDayThree} iconDayThree={weather.iconDayThree} minDayThree={weather.minDayThree} maxDayThree={weather.maxDayThree}/>
+               <DayFour dtDayFour={weather.dtDayFour} iconDayFour={weather.iconDayFour} minDayFour={weather.minDayFour} maxDayFour={weather.maxDayFour}/>
+               <DayFive  dtDayFive={weather.dtDayFive} iconDayFive={weather.iconDayFive} minDayFive={weather.minDayFive} maxDayFive={weather.maxDayFive}/>
+               </div>
               </div>
             ) : (
               <div className="enter-city-p">

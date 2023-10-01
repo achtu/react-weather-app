@@ -39,6 +39,11 @@
   font-weight: 600;
   color: #48484a;
 }
+.div-days{
+  display: flex;
+
+  justify-content: space-between;
+}
 /* FORM */
 .form-wrap {
   position: relative;
