@@ -1,11 +1,6 @@
 import React from "react";
 import { Container, Navbar, NavbarBrand } from "react-bootstrap";
-import Home from "../pages/Home";
-
-
 import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
-
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -17,13 +12,6 @@ export default function Header() {
         </Container>
       </Navbar>
 
-      <Router>
-        <Routes>
-          <Route exact path="/" Component={Home} />
-       
-          
-        </Routes>
-      </Router>
     </>
   );
 }
