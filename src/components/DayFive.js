@@ -6,7 +6,7 @@ export default function DayFive({dtDayFive, iconDayFive, minDayFive, maxDayFive 
     return (
         <>
             <div className="hourly-wrp">
-                <p>day 5<br/>
+                <p>
                 {dtDayFive}</p>
                 <Image
                     src={`http://openweathermap.org/img/wn/${iconDayFive}@2x.png`}

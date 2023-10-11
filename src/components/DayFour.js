@@ -6,7 +6,7 @@ export default function DayFour({dtDayFour, iconDayFour, minDayFour, maxDayFour 
     return (
         <>
             <div className="hourly-wrp">
-                <p>day 4<br/>
+                <p>
                 {dtDayFour}
                 </p>
                 <Image
